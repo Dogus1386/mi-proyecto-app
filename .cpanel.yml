@@ -1,10 +1,6 @@
 deployment:
   tasks:
-    - export REPOPATH=/home/lnq2jmdtejy1/repositories/mi-proyecto-app
-    - export DEPLOYPATH=/home/lnq2jmdtejy1/public_html/app.bienestar-fitness.com
+    - export DEPLOYPATH=/home/lnq2jmdtejy1/public_html/app.bienestar-fitness.com/
     - /bin/mkdir -p $DEPLOYPATH
-    - /bin/cp -R $REPOPATH/* $DEPLOYPATH/
-
-
-
-Add cPanel deploy config
+    - /bin/rm -rf $DEPLOYPATH/*
+    - /bin/cp -R ./* $DEPLOYPATH
