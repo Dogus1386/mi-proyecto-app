@@ -1,0 +1,7 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/lnq2jmdtejy1/public_html/app.bienestar-fitness.com/
+    - /bin/cp -R * $DEPLOYPATH
+
+
+Add cPanel deploy config
