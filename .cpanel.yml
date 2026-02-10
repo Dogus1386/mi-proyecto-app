@@ -1,6 +1,14 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/lnq2jmdtejy1/public_html/app.bienestar-fitness.com/
-    - /bin/cp -R app $DEPLOYPATH
-    - /bin/cp -R config $DEPLOYPATH
+
+    # 1) Asegurar carpetas
+    - /bin/mkdir -p $DEPLOYPATH/app
+    - /bin/mkdir -p $DEPLOYPATH/config
+
+    # 2) Copiar el contenido público al root del subdominio
     - /bin/cp -R public/* $DEPLOYPATH
+
+    # 3) Copiar app (layouts) y config (db.php)
+    - /bin/cp -R app/* $DEPLOYPATH/app/
+    - /bin/cp -R config/* $DEPLOYPATH/config/
