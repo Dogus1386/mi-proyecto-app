@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Mi Proyecto App</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
+<?php
+$pageTitle = "Inicio";
+require __DIR__ . "/../app/layout/header.php";
+?>
 
-    <h1>Mi aplicación ya está funcionando</h1>
-    <p>Deploy automático con Git y cPanel.</p>
+<h2>Bienvenido</h2>
+<p>Este es el inicio del mini sistema web. Usa el menú para navegar.</p>
 
-</body>
-</html>
+<?php require __DIR__ . "/../app/layout/footer.php"; ?>
