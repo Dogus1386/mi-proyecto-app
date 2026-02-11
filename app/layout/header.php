@@ -24,6 +24,8 @@ if ($baseUrl === '/' || $baseUrl === '.') {
     <a href="<?= $baseUrl ?>/index.php">Inicio</a>
     <a href="<?= $baseUrl ?>/clientes.php">Clientes</a>
     <a href="<?= $baseUrl ?>/productos.php">Productos</a>
+    <a href="<?= $baseUrl ?>/logout.php">Salir</a>
+
   </nav>
 </header>
 

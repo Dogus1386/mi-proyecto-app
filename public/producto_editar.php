@@ -3,6 +3,8 @@ $pageTitle = "Editar producto";
 
 // Root del proyecto (sirve en local y en producción)
 $PROJECT_ROOT = is_dir(__DIR__ . "/app") ? __DIR__ : dirname(__DIR__);
+require __DIR__ . "/../app/auth.php";
+require_login();
 
 // Layout
 require $PROJECT_ROOT . "/app/layout/header.php";

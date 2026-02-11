@@ -3,6 +3,9 @@ $pageTitle = "Productos";
 
 // Carga layout
 $PROJECT_ROOT = is_dir(__DIR__ . "/app") ? __DIR__ : dirname(__DIR__);
+require __DIR__ . "/../app/auth.php";
+require_login();
+
 require $PROJECT_ROOT . "/app/layout/header.php";
 
 // Conexión BD

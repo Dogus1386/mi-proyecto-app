@@ -46,3 +46,46 @@ body {
   padding:18px;
   color:#666;
 }
+
+
+.card{
+  margin: 16px 0;
+  padding: 16px;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.form{
+  display: grid;
+  gap: 10px;
+  max-width: 420px;
+}
+
+.form input{
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.form button{
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td{
+  padding: 10px;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.right{
+  text-align: right;
+}
