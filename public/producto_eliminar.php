@@ -1,15 +1,12 @@
 <?php
 $pageTitle = "Eliminar producto";
 
-// Root del proyecto (sirve en local y en producción)
-$PROJECT_ROOT = is_dir(__DIR__ . "/../app") ? dirname(__DIR__) : __DIR__;
+$PROJECT_ROOT = is_dir(__DIR__ . "/app") ? __DIR__ : dirname(__DIR__);
+
 require $PROJECT_ROOT . "/app/auth.php";
 require_login();
 
-// Layout
 require $PROJECT_ROOT . "/app/layout/header.php";
-
-// Conexión BD
 require $PROJECT_ROOT . "/config/db.php";
 
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
@@ -20,10 +17,9 @@ if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
 
 $id = (int)$_GET['id'];
 
-// Cargar producto
 $stmt = $pdo->prepare("SELECT id, nombre FROM productos WHERE id = ?");
 $stmt->execute([$id]);
-$producto = $stmt->fetch(PDO::FETCH_ASSOC);
+$producto = $stmt->fetch();
 
 if (!$producto) {
   echo "<p>Producto no encontrado.</p>";
@@ -31,7 +27,6 @@ if (!$producto) {
   exit;
 }
 
-// Confirmación
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $stmt = $pdo->prepare("DELETE FROM productos WHERE id = ?");
   $stmt->execute([$id]);

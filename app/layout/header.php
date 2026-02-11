@@ -1,11 +1,9 @@
 <?php
 // app/layout/header.php
 
-// Base URL relativa al directorio donde está el script actual
+// Base URL automática (local: /mi-proyecto-app/public | prod: '')
 $scriptDir = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? ''));
 $baseUrl = rtrim($scriptDir, '/');
-
-// Si queda "/" o ".", lo dejamos vacío
 if ($baseUrl === '/' || $baseUrl === '.') {
   $baseUrl = '';
 }
@@ -14,7 +12,6 @@ if ($baseUrl === '/' || $baseUrl === '.') {
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?= htmlspecialchars($pageTitle ?? 'Mi Proyecto App') ?></title>
   <link rel="stylesheet" href="<?= $baseUrl ?>/css/styles.css">
 </head>
