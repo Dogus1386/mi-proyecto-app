@@ -1,3 +1,6 @@
+<?php
+// app/layout/footer.php
+?>
 </main>
 
 <footer class="footer">

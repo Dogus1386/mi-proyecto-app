@@ -1,7 +1,7 @@
 <?php
 $pageTitle = "Inicio";
 
-$PROJECT_ROOT = is_dir(__DIR__ . "/app") ? __DIR__ : dirname(__DIR__);
+$PROJECT_ROOT = is_dir(__DIR__ . "/../app") ? dirname(__DIR__) : __DIR__;
 require $PROJECT_ROOT . "/app/auth.php";
 require_login();
 
