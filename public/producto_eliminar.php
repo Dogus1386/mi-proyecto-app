@@ -1,13 +1,18 @@
 <?php
 $pageTitle = "Eliminar producto";
-require __DIR__ . "/../app/layout/header.php";
 
-// Ajusta si tu conexión está en otra ruta:
-require __DIR__ . "/../config/db.php"; // <-- si tu archivo se llama distinto, me dices el nombre
+// Root del proyecto (sirve en local y en producción)
+$PROJECT_ROOT = is_dir(__DIR__ . "/app") ? __DIR__ : dirname(__DIR__);
+
+// Layout
+require $PROJECT_ROOT . "/app/layout/header.php";
+
+// Conexión BD
+require $PROJECT_ROOT . "/config/db.php";
 
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
   echo "<p>ID inválido.</p>";
-  require __DIR__ . "/../app/layout/footer.php";
+  require $PROJECT_ROOT . "/app/layout/footer.php";
   exit;
 }
 
@@ -20,7 +25,7 @@ $producto = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if (!$producto) {
   echo "<p>Producto no encontrado.</p>";
-  require __DIR__ . "/../app/layout/footer.php";
+  require $PROJECT_ROOT . "/app/layout/footer.php";
   exit;
 }
 
@@ -42,4 +47,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <a href="productos.php">Cancelar</a>
 </form>
 
-<?php require __DIR__ . "/../app/layout/footer.php"; ?>
+<?php require $PROJECT_ROOT . "/app/layout/footer.php"; ?>
